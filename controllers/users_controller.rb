@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     render(:erb, :"users/edit")
   end
 
-  get('/show') do
+  get('/:id') do
     render(:erb, :"users/show")
   end
 
