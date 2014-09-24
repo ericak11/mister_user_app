@@ -9,7 +9,8 @@ module RandomUser
     dob:  response["dob"].to_i,
     phone:  response["phone"],
     location:  response["location"]["city"],
-    password:  response["password"]
+    password:  response["password"],
+    password_confirmation: response["password"]
     }
     puts hash
     User.create(hash)

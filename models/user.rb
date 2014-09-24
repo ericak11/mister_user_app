@@ -9,6 +9,7 @@
   # String :password, :size=>500, :null=>false
 
   class User < Sequel::Model
+    plugin :secure_password
     def male?
       gender == "male"
     end
