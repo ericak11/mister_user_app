@@ -2,7 +2,7 @@ module RandomUser
   def self.fetch
     response = HTTParty.get("http://api.randomuser.me")["results"][0]["user"]
     hash = {
-    name: "#{response["name"]["first"]} #{response["name"]["last"]}",
+    name: "#{response["name"]["title"]} #{response["name"]["first"]} #{response["name"]["last"]}",
     gender: response["gender"],
     picture:  response["picture"]["large"],
     email:  response["email"],
