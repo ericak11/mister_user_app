@@ -90,7 +90,8 @@ namespace :db do
   end
 
   desc "seeds random users"
-  task :seed_random_users do
+  task :seed_random_users, [:env] do |cmd, args|
+    puts "seeding db"
     env = args[:env] || ENV["RACK_ENV"] || "development"
     Rake::Task['environment'].invoke(env)
     10.times do
@@ -110,4 +111,4 @@ namespace :db do
     end
   end
 end
-pry
+
